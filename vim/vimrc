@@ -112,7 +112,6 @@ map <Leader>bl :MBEToggle<cr>
 map <Leader><Tab> :MBEbn<cr>
 map <Leader><S-Tab> :MBEbp<cr>
 
-
 " 允许用指定语法高亮配色方案替换默认方案
 syntax on
 " 设置状态栏主题风格
@@ -121,25 +120,5 @@ syntax on
 set termguicolors
 "set background=dark
 colorscheme onedark
-
-" Plug 插件管理
-call plug#begin('~/.vim/plugged')
-" Always loading
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'nathanaelkane/vim-indent-guides'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'andrewstuart/vim-kubernetes'
-Plug 'chr4/nginx.vim'
-Plug 'fholgado/minibufexpl.vim'
-Plug 'joshdick/onedark.vim'
-" On-demand loading
-Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
-call plug#end()
 
 endif
