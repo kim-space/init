@@ -3,7 +3,7 @@
 if !(empty($ENABLE_VIM_CONFIG))
 
 " 加载 vim-plug 配置
-source ~/.vim_plug
+source ~/.vimrc_plug
 
 " ################ 标准 vim 配置 ################
 
@@ -117,11 +117,8 @@ map <Leader><S-Tab> :MBEbp<cr>
 
 " 允许用指定语法高亮配色方案替换默认方案
 syntax on
-" 设置状态栏主题风格
-" let g:Powerline_colorscheme='solarized256'
 " 配色方案(真彩色支持)
 set termguicolors
-"set background=dark
 colorscheme onedark
 
 endif

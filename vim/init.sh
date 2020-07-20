@@ -3,7 +3,7 @@
 ENABLE_VIM_CONFIG="true"
 VIM_CONFIG_URL="https://raw.githubusercontent.com/mritd/init/master/vim/vimrc"
 VIM_PLUG_URL="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-VIM_PLUG_CONFIG_URL="https://raw.githubusercontent.com/mritd/init/master/vim/vim_plug"
+VIM_PLUG_CONFIG_URL="https://raw.githubusercontent.com/mritd/init/master/vim/vimrc_plug"
 
 function backup_config(){
     info "backup old config..."
@@ -27,7 +27,7 @@ function install_vimconfig(){
     info "install ~/.vimrc..."
     curl -sSL ${VIM_CONFIG_URL} > ~/.vimrc
     info "install ~/.vim_plug..."
-    curl -sSL ${VIM_PLUG_CONFIG_URL} > ~/.vim_plug
+    curl -sSL ${VIM_PLUG_CONFIG_URL} > ~/.vimrc_plug
 }
 
 function install_plugins(){
