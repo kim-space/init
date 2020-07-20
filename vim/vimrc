@@ -137,6 +137,7 @@ Plug 'honza/vim-snippets'
 Plug 'andrewstuart/vim-kubernetes'
 Plug 'chr4/nginx.vim'
 Plug 'fholgado/minibufexpl.vim'
+Plug 'joshdick/onedark.vim'
 " On-demand loading
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 call plug#end()
