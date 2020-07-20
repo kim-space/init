@@ -93,6 +93,8 @@ let g:indent_guides_guide_size=1
 nmap <Leader>i :IndentGuidesToggle<CR>
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
 nmap <Leader>fl :NERDTreeToggle<CR>
+" 更改 NERDTree root dit
+nmap <Leader>fn :NERDTree
 " 设置NERDTree子窗口宽度
 let NERDTreeWinSize=32
 " 设置NERDTree子窗口位置
