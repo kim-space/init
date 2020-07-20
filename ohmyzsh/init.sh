@@ -2,9 +2,11 @@
 
 set -e
 
-OHMYZSH_URL='https://github.com/robbyrussell/oh-my-zsh.git'
-OHMYZSH_CONFIG_URL='https://raw.githubusercontent.com/mritd/init/master/ohmyzsh/zshrc'
-SYNTAX_HIGHLIGHTING_URL='https://github.com/zsh-users/zsh-syntax-highlighting.git'
+GITHUB_HOST=${GITHUB_HOST-"github.com"}
+GITHUB_RAW_HOST=${GITHUB_RAW_HOST-"raw.githubusercontent.com"}`
+OHMYZSH_URL="https://${GITHUB_HOST}/robbyrussell/oh-my-zsh.git"
+OHMYZSH_CONFIG_URL="https://${GITHUB_RAW_HOST}/mritd/init/master/ohmyzsh/zshrc"
+SYNTAX_HIGHLIGHTING_URL="https://${GITHUB_HOST}/zsh-users/zsh-syntax-highlighting.git
 
 backup_timestamp=$(date "+%Y%m%d%H%M%S")
 
