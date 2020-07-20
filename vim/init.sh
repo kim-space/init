@@ -9,6 +9,13 @@ VIM_CONFIG_URL="https://${GITHUB_RAW_HOST}/mritd/init/master/vim/vimrc"
 VIM_PLUG_URL="https://${GITHUB_RAW_HOST}/junegunn/vim-plug/master/plug.vim"
 VIM_PLUG_CONFIG_URL="https://${GITHUB_RAW_HOST}/mritd/init/master/vim/vimrc_plug"
 
+function pre_check(){
+    if ! command -v vim >/dev/null 2>&1; then
+       err "vim is not installed, please install vim before init."
+       exit 1
+    fi
+}
+
 function backup_config(){
     info "backup old config..."
     backup_timestamp=$(date "+%Y%m%d%H%M%S")
@@ -47,6 +54,11 @@ function warn(){
     echo -e "\033[33mWARN: $@\033[0m"
 }
 
+function err(){
+    echo -e "\033[31mERROR: $@\033[0m"
+}
+
+pre_check
 backup_config
 install_plug
 install_vimconfig
