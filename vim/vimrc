@@ -1,5 +1,7 @@
 if !(empty($ENABLE_VIM_CONFIG))
 
+" 加载 vim-plug 配置
+source ~/.vim_plug
 " 定义快捷键的前缀，即<Leader>
 let mapleader=";"
 " 开启文件类型侦测
