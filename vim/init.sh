@@ -3,9 +3,11 @@
 set -e
 
 ENABLE_VIM_CONFIG="true"
-VIM_CONFIG_URL="https://raw.githubusercontent.com/mritd/init/master/vim/vimrc"
-VIM_PLUG_URL="https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-VIM_PLUG_CONFIG_URL="https://raw.githubusercontent.com/mritd/init/master/vim/vimrc_plug"
+GITHUB_HOST=${GITHUB_HOST-"github.com"}
+GITHUB_RAW_HOST=${GITHUB_RAW_HOST-"raw.githubusercontent.com"}
+VIM_CONFIG_URL="https://${GITHUB_RAW_HOST}/mritd/init/master/vim/vimrc"
+VIM_PLUG_URL="https://${GITHUB_RAW_HOST}/junegunn/vim-plug/master/plug.vim"
+VIM_PLUG_CONFIG_URL="https://${GITHUB_RAW_HOST}/mritd/init/master/vim/vimrc_plug"
 
 function backup_config(){
     info "backup old config..."
