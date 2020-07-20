@@ -73,13 +73,13 @@ nmap <Leader>w :w<CR>
 " 不做任何保存，直接退出 vim
 nmap <Leader>Q :qa!<CR>
 " 跳转至右方的窗口
-nnoremap <Leader>lw <C-W>l
+nnoremap <Leader><Right>w <C-W>l
 " 跳转至左方的窗口
-nnoremap <Leader>hw <C-W>h
+nnoremap <Leader><Left>w <C-W>h
 " 跳转至上方的子窗口
-nnoremap <Leader>kw <C-W>k
+nnoremap <Leader><Up>w <C-W>k
 " 跳转至下方的子窗口
-nnoremap <Leader>jw <C-W>j
+nnoremap <Leader><Down>w <C-W>j
 
 " ################ 自定义插件配置 ################
 
@@ -90,7 +90,7 @@ let g:indent_guides_start_level=2
 " 色块宽度
 let g:indent_guides_guide_size=1
 " 快捷键 i 开/关缩进可视化
-:nmap <Leader>i <Plug>IndentGuidesToggle
+nmap <Leader>i :IndentGuidesToggle<CR>
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
 nmap <Leader>fl :NERDTreeToggle<CR>
 " 设置NERDTree子窗口宽度
