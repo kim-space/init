@@ -2,13 +2,11 @@
 call plug#begin('~/.vim/plugged')
 " Always loading
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'godlygeek/tabular'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'andrewstuart/vim-kubernetes'
+Plug 'ekalinin/Dockerfile.vim'
 Plug 'chr4/nginx.vim'
 Plug 'fholgado/minibufexpl.vim'
 Plug 'joshdick/onedark.vim'
