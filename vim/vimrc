@@ -73,13 +73,13 @@ nmap <Leader>w :w<CR>
 " 不做任何保存，直接退出 vim
 nmap <Leader>Q :qa!<CR>
 " 跳转至右方的窗口
-nnoremap <Leader><Right>w <C-W>l
+nnoremap <Leader><Right><Right> <C-W>l
 " 跳转至左方的窗口
-nnoremap <Leader><Left>w <C-W>h
+nnoremap <Leader><Left><Left> <C-W>h
 " 跳转至上方的子窗口
-nnoremap <Leader><Up>w <C-W>k
+nnoremap <Leader><Up><Up> <C-W>k
 " 跳转至下方的子窗口
-nnoremap <Leader><Down>w <C-W>j
+nnoremap <Leader><Down><Down> <C-W>j
 
 " ################ 自定义插件配置 ################
 
