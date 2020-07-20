@@ -10,6 +10,13 @@ SYNTAX_HIGHLIGHTING_URL="https://${GITHUB_HOST}/zsh-users/zsh-syntax-highlightin
 
 backup_timestamp=$(date "+%Y%m%d%H%M%S")
 
+function pre_check(){
+    if ! command -v zsh >/dev/null 2>&1; then
+       err "zsh is not installed, please install zsh before init."
+       exit 1
+    fi
+}
+
 function backup_config(){
     info "backup old config..."
     if [ -f ~/.zshrc ]; then
@@ -44,6 +51,11 @@ function warn(){
     echo -e "\033[33mWARN: $@\033[0m"
 }
 
+function err(){
+    echo -e "\033[31mERROR: $@\033[0m"
+}
+
+pre_check
 backup_config
 install_ohmyzsh
 install_syntax_highlighting
