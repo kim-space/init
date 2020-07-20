@@ -6,9 +6,8 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'ekalinin/Dockerfile.vim'
-Plug 'chr4/nginx.vim'
 Plug 'fholgado/minibufexpl.vim'
+Plug 'sheerun/vim-polyglot'
 Plug 'joshdick/onedark.vim'
 " On-demand loading
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
