@@ -32,7 +32,7 @@ function install_vimconfig(){
 
 function install_plugins(){
     info "install vim plugins..."
-    vim -e -u ~/.vim_plug -i NONE -c "PlugInstall" -c "qa"
+    vim -e -u ~/.vimrc_plug -i NONE -c "PlugInstall" -c "qa"
 }
 
 function info(){
