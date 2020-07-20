@@ -42,3 +42,6 @@ function warn(){
     echo -e "\033[33mWARN: $@\033[0m"
 }
 
+backup_config
+install_ohmyzsh
+install_syntax_highlighting
