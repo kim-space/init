@@ -36,7 +36,7 @@ function install_docker(){
     systemctl daemon-reload && systemctl restart docker
 }
 
-function install_dc(){
+function install_compose(){
     info "install docker-compose..."
     curl -sSL ${DOCKER_COMPOSE_URL} > /usr/local/bin/docker-compose
     chmod +x /usr/local/bin/docker-compose
@@ -54,6 +54,5 @@ function err(){
     echo -e "\033[31mERROR: $@\033[0m"
 }
 
-setlocale
-sysupdate
-settimezone
+install_docker
+install_compose
