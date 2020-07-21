@@ -3,6 +3,7 @@
 set -e
 
 OS_RELEASE="$(lsb_release -cs)"
+OS_TIMEZONE=${OS_TIMEZONE-"Asia/Shanghai"}
 GITHUB_HOST=${GITHUB_HOST-"github.com"}
 GITHUB_RAW_HOST=${GITHUB_RAW_HOST-"raw.githubusercontent.com"}
 USE_APT_MIRROR=${USE_APT_MIRROR-"true"}
@@ -37,8 +38,8 @@ function sysupdate(){
 }
 
 function settimezone(){
-    info "set system timezone to [${TZ}]..."
-    timedatectl set-timezone ${TZ}
+    info "set system timezone to [${OS_TIMEZONE}]..."
+    timedatectl set-timezone ${OS_TIMEZONE}
 }
 
 function info(){
