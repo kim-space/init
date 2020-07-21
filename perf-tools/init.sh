@@ -2,13 +2,17 @@
 
 set -e
 
+OS_TYPE="$(lsb_release -is)"
 GITHUB_HOST=${GITHUB_HOST-"github.com"}
 PERF_TOOLS_URL="https://${GITHUB_HOST}/brendangregg/perf-tools.git"
 
 function install_perf-tools(){
     info "install perf-tools..."
     git clone --depth 1 ${PERF_TOOLS_URL} /usr/local/perf-tools
-    info "perf-tools is installed, you may need to add /usr/local/perf-tools to the PATH."
+    info "perf-tools is installed, you need to add /usr/local/perf-tools/bin to the PATH."
+    if [ "${OS_TYPE}" == "Ubuntu" ]; then
+        info "On Ubuntu systems, you may also need to install the [linux-tools-common, linux-tools-generic] packages to make perf-tools work."
+    fi
 }
 
 function info(){
