@@ -23,4 +23,4 @@ function err(){
     echo -e "\033[31mERROR: $@\033[0m"
 }
 
-install_hey
+install_perf-tools
