@@ -26,6 +26,8 @@ set number
 " set cursorcolumn
 " 高亮显示搜索结果
 set hlsearch
+" 修复 buffer 关闭语法高亮失效问题
+set hidden
 " 将制表符扩展为空格
 set expandtab
 " 设置编辑时制表符占用空格数
@@ -93,18 +95,19 @@ let g:indent_guides_guide_size=1
 nmap <Leader>i :IndentGuidesToggle<CR>
 " 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
 nmap <Leader>fl :NERDTreeToggle<CR>
-" 更改 NERDTree root dit
-nmap <Leader>fn :NERDTree
-" 设置NERDTree子窗口宽度
-let NERDTreeWinSize=32
-" 设置NERDTree子窗口位置
-let NERDTreeWinPos="right"
+nmap <Leader>fn :NERDTree 
+" 设置 NERDTree 子窗口宽度
+let g:NERDTreeWinSize=36
+" 设置 NERDTree 子窗口位置
+let g:NERDTreeWinPos="right"
 " 显示隐藏文件
-let NERDTreeShowHidden=1
+let g:NERDTreeShowHidden=1
+" 打开文件后自动关闭 NERDTree
+let g:NERDTreeQuitOnOpen=1
 " NERDTree 子窗口中不显示冗余帮助信息
-let NERDTreeMinimalUI=1
+"let NERDTreeMinimalUI=1
 " 删除文件时自动删除文件对应 buffer
-let NERDTreeAutoDeleteBuffer=1
+let g:NERDTreeAutoDeleteBuffer=1
 " 自动完成代码片段触发
 let g:UltiSnipsExpandTrigger="<tab>"
 " 切换到下一个触发点
