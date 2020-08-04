@@ -82,6 +82,8 @@ nnoremap <Leader><Left><Left> <C-W>h
 nnoremap <Leader><Up><Up> <C-W>k
 " 跳转至下方的子窗口
 nnoremap <Leader><Down><Down> <C-W>j
+" 退出插入模式自动保存
+au InsertLeave *.go,*.sh write
 
 " ################ 自定义插件配置 ################
 
