@@ -32,7 +32,8 @@ function sysupdate(){
     apt upgrade -y
     info "install custom packages..."
     apt install -y apt-transport-https ca-certificates software-properties-common \
-        wget vim zsh git htop tzdata conntrack ipvsadm ipset stress sysstat axel
+        wget vim zsh git htop tzdata conntrack ipvsadm ipset stress sysstat axel \
+        nload net-tools
     apt autoremove -y
     apt autoclean -y
 }
