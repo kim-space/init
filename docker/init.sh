@@ -21,7 +21,7 @@ function install_docker(){
         if [ "${USE_APT_MIRROR}" == "true" ]; then
             info "use aliyun docker apt mirror..."
             curl -sSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | apt-key add -
-            curl -sSL ${DOCKER_LIST_URL} | sed "s@{{OS_RELEASE}}@${OS_RELEASE}@gi" > /etc/apt/sources.list.d/docker.list
+            curl -sSL ${DOCKER_APT_LIST_URL} | sed "s@{{OS_RELEASE}}@${OS_RELEASE}@gi" > /etc/apt/sources.list.d/docker.list
         else
             curl -sSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
             echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu ${OS_RELEASE} stable" > /etc/apt/sources.list.d/docker.list
