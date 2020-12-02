@@ -16,7 +16,7 @@ function install_docker(){
     info "install docker..."
     if [ "${OS_RELEASE}" == "focal" ]; then
         apt install docker.io -y
-        apt-mark hold docker.io
+        apt-mark hold docker docker.io containerd
     else
         if [ "${USE_APT_MIRROR}" == "true" ]; then
             info "use aliyun docker apt mirror..."
@@ -28,7 +28,7 @@ function install_docker(){
         fi
         apt update -y
         apt install docker-ce -y
-        apt-mark hold docker-ce
+        apt-mark hold docker docker-ce containerd
     fi
 
     curl -sSL ${DOCKER_SYSTEMD_CONFIG_URL} > docker.service
