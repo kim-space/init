@@ -36,6 +36,7 @@ function sysupdate(){
         nload net-tools tree
     apt autoremove -y
     apt autoclean -y
+    systemctl disable apt-daily.timer apt-daily-upgrade.timer
 }
 
 function settimezone(){
