@@ -33,7 +33,7 @@ function install_docker(){
 
     curl -sSL ${DOCKER_SYSTEMD_CONFIG_URL} > docker.service
     SYSTEMD_EDITOR="mv docker.service" systemctl edit docker
-    systemctl daemon-reload && systemctl restart docker
+    systemctl daemon-reload && systemctl restart docker && systemctl enable docker
 }
 
 function install_compose(){
