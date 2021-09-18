@@ -14,6 +14,8 @@ fi
 
 eval "$(fasd --init auto)"
 
+export EDITOR='vim'
+
 export DEV_TOOLS="/opt/devtools"
 
 export GOPATH="${HOME}/gopath"
@@ -31,3 +33,5 @@ export PATH="${NODE_HOME}/bin:${PATH}"
 
 export SONAR_SCANNER="${DEV_TOOLS}/sonar-scanner"
 export PATH="${SONAR_SCANNER}/bin:${PATH}"
+
+alias dc='docker-compose'
