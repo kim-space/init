@@ -3,6 +3,7 @@
 set -e
 
 BACKUP_TIMESTAMP=$(date "+%Y%m%d%H%M%S")
+PREZTO_REPO='https://github.com/sorin-ionescu/prezto.git'
 ZPREZTORC_URL='https://github.com/mritd/init/raw/master/prezto/zpreztorc'
 ZSHRC_URL='https://github.com/mritd/init/raw/master/prezto/zshrc'
 
@@ -21,11 +22,17 @@ function install_zsh(){
 
 function install_prezto(){
     info "install prezto..."
-    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+    zdot_home="${ZDOTDIR:-$HOME}/.zprezto"
+    if [[ -d "${zdot_home}" ]]; then
+        warn "backup [${zdot_home}] to [${zdot_home}-${BACKUP_TIMESTAMP}]"
+        mv "${zdot_home}" "${zdot_home}-${BACKUP_TIMESTAMP}"
+    fi
+
+    git clone --recursive ${PREZTO_REPO} "${zdot_home}" 
 
     info "link config..."
     setopt EXTENDED_GLOB
-    for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+    for rcfile in "${ZDOTDIR:-$HOME}/.zprezto/runcoms/^README.md(.N)"; do
         target="${ZDOTDIR:-$HOME}/.${rcfile:t}"
         if [[ -f "${target}" ]]; then
             warn "backup [${target}] to [${target}-${BACKUP_TIMESTAMP}]"
