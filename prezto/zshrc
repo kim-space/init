@@ -16,7 +16,11 @@ eval "$(fasd --init auto)"
 
 export EDITOR='vim'
 
-export DEV_TOOLS="/opt/devtools"
+if [[ "$OSTYPE" =~ ^darwin ]]; then
+    export DEV_TOOLS="${HOME}/devtools"
+else
+    export DEV_TOOLS="/opt/devtools"
+fi
 
 export GOPATH="${HOME}/gopath"
 export GOROOT="${DEV_TOOLS}/go"

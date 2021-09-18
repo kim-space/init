@@ -9,7 +9,9 @@ ZSHRC_URL='https://github.com/mritd/init/raw/master/prezto/zshrc'
 
 function install_zsh(){
     info "install zsh..."
-    if [[ "$OSTYPE" =~ ^linux ]]; then
+    if [[ "$OSTYPE" =~ ^darwin ]]; then
+        brew install zsh
+    elif [[ "$OSTYPE" =~ ^linux ]]; then
         apt install zsh -y
     else
         err "unsupport os type!"
@@ -31,14 +33,13 @@ function install_prezto(){
     git clone --recursive ${PREZTO_REPO} "${zdot_home}" 
 
     info "link config..."
-    setopt EXTENDED_GLOB
-    for rcfile in "${ZDOTDIR:-$HOME}/.zprezto/runcoms/^README.md(.N)"; do
+    for rcfile in "$(ls -1 ${ZDOTDIR:-$HOME}/.zprezto/runcoms/* | xargs -n 1 basename | grep -v README)"; do
         target="${ZDOTDIR:-$HOME}/.${rcfile:t}"
         if [[ -f "${target}" ]]; then
             warn "backup [${target}] to [${target}-${BACKUP_TIMESTAMP}]"
             mv "${target}" "${target}-${BACKUP_TIMESTAMP}"
         fi
-        ln -s "$rcfile" "${target}"
+        ln -s "${ZDOTDIR:-$HOME}/.zprezto/runcoms/${rcfile}" "${target}"
     done
 }
 
