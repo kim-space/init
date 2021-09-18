@@ -12,7 +12,7 @@ function install_zsh(){
     if [[ "$OSTYPE" =~ ^darwin ]]; then
         brew install zsh
     elif [[ "$OSTYPE" =~ ^linux ]]; then
-        apt install zsh -y
+        sudo apt install zsh -y
     else
         err "unsupport os type!"
         exit 1
