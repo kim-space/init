@@ -22,6 +22,18 @@ function install_zsh(){
     chsh -s $(grep /zsh$ /etc/shells | tail -1)
 }
 
+function install_fasd(){
+    info "install fasd..."
+    if [[ "$OSTYPE" =~ ^darwin ]]; then
+        brew install fasd
+    elif [[ "$OSTYPE" =~ ^linux ]]; then
+        sudo apt install fasd -y
+    else
+        err "unsupport os type!"
+        exit 1
+    fi
+}
+
 function install_prezto(){
     info "install prezto..."
     zdot_home="${ZDOTDIR:-$HOME}/.zprezto"
@@ -62,5 +74,6 @@ function err(){
 }
 
 install_zsh
+install_fasd
 install_prezto
 install_cutom_config
