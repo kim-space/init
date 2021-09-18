@@ -1,0 +1,33 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
+
+# Customize to your needs...
+
+eval "$(fasd --init auto)"
+
+export DEV_TOOLS="/opt/devtools"
+
+export GOPATH="${HOME}/gopath"
+export GOROOT="${DEV_TOOLS}/go"
+export PATH="${GOROOT}/bin:${GOPATH}/bin:${PATH}"
+
+export JAVA_HOME="${DEV_TOOLS}/openjdk11"
+export PATH="${JAVA_HOME}/bin:${PATH}"
+
+export M2_HOME="${DEV_TOOLS}/maven"
+export PATH="${M2_HOME}/bin:${PATH}"
+
+export NODE_HOME="${DEV_TOOLS}/nodejs"
+export PATH="${NODE_HOME}/bin:${PATH}"
+
+export SONAR_SCANNER="${DEV_TOOLS}/sonar-scanner"
+export PATH="${SONAR_SCANNER}/bin:${PATH}"
