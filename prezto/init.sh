@@ -7,22 +7,14 @@ PREZTO_REPO='https://github.com/sorin-ionescu/prezto.git'
 ZPREZTORC_URL='https://github.com/mritd/init/raw/master/prezto/zpreztorc'
 ZSHRC_URL='https://github.com/mritd/init/raw/master/prezto/zshrc'
 
-function install_zsh(){
-    info "install zsh..."
-    if [[ "$OSTYPE" =~ ^darwin ]]; then
-        brew install zsh
-    elif [[ "$OSTYPE" =~ ^linux ]]; then
-        tos=$(cat /etc/os-release | egrep ^ID | cut -d '=' -f 2)
-        if [[ "$tos" =~ ^ubuntu ]]; then
-            sudo apt install zsh -y
-        elif [[ "$tos" =~ ^alpine ]]; then
-            sudo apk add zsh
-        fi
-    else
-        err "unsupport os type!"
-        exit 1
+function pre_check(){
+    if ! command -v zsh >/dev/null 2>&1; then
+       err "zsh is not installed, please install zsh before init."
+       exit 1
     fi
+}
 
+function change_default_shell(){
     info "change default shell to zsh..."
     chsh -s $(grep /zsh$ /etc/shells | tail -1)
 }
@@ -66,6 +58,7 @@ function err(){
     echo -e "\033[31mERROR: $@\033[0m"
 }
 
-install_zsh
+pre_check
+change_default_shell
 install_prezto
 install_cutom_config
