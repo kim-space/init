@@ -12,7 +12,12 @@ function install_zsh(){
     if [[ "$OSTYPE" =~ ^darwin ]]; then
         brew install zsh
     elif [[ "$OSTYPE" =~ ^linux ]]; then
-        sudo apt install zsh -y
+        tos=$(cat /etc/os-release | egrep ^ID | cut -d '=' -f 2)
+        if [[ "$tos" =~ ^ubuntu ]]; then
+            sudo apt install zsh -y
+        elif [[ "$tos" =~ ^Alpine ]]; then
+            sudo apk add zsh
+        fi
     else
         err "unsupport os type!"
         exit 1
@@ -20,18 +25,6 @@ function install_zsh(){
 
     info "change default shell to zsh..."
     chsh -s $(grep /zsh$ /etc/shells | tail -1)
-}
-
-function install_fasd(){
-    info "install fasd..."
-    if [[ "$OSTYPE" =~ ^darwin ]]; then
-        brew install fasd
-    elif [[ "$OSTYPE" =~ ^linux ]]; then
-        sudo apt install fasd -y
-    else
-        err "unsupport os type!"
-        exit 1
-    fi
 }
 
 function install_prezto(){
@@ -74,6 +67,5 @@ function err(){
 }
 
 install_zsh
-#install_fasd
 install_prezto
 install_cutom_config
