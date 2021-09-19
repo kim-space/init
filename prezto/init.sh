@@ -15,7 +15,7 @@ function install_zsh(){
         tos=$(cat /etc/os-release | egrep ^ID | cut -d '=' -f 2)
         if [[ "$tos" =~ ^ubuntu ]]; then
             sudo apt install zsh -y
-        elif [[ "$tos" =~ ^Alpine ]]; then
+        elif [[ "$tos" =~ ^alpine ]]; then
             sudo apk add zsh
         fi
     else
