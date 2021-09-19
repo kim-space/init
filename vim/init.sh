@@ -11,8 +11,8 @@ VIM_PLUG_CONFIG_URL="https://${GITHUB_RAW_HOST}/mritd/init/master/vim/vimrc_plug
 
 function pre_check(){
     if ! command -v vim >/dev/null 2>&1; then
-       err "vim is not installed, please install vim before init."
-       exit 1
+        err "vim is not installed, please install vim before init."
+        exit 1
     fi
 }
 

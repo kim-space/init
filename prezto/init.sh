@@ -9,8 +9,8 @@ ZSHRC_URL='https://github.com/mritd/init/raw/master/prezto/zshrc'
 
 function pre_check(){
     if ! command -v zsh >/dev/null 2>&1; then
-       err "zsh is not installed, please install zsh before init."
-       exit 1
+        err "zsh is not installed, please install zsh before init."
+        exit 1
     fi
 }
 
