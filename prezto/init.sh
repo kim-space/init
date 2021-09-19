@@ -74,6 +74,6 @@ function err(){
 }
 
 install_zsh
-install_fasd
+#install_fasd
 install_prezto
 install_cutom_config

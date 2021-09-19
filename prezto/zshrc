@@ -12,12 +12,18 @@ fi
 
 # Customize to your needs...
 
-eval "$(fasd --init auto)"
-
+export ENABLE_VIM_CONFIG='true'
 export EDITOR='vim'
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
     export DEV_TOOLS="${HOME}/devtools"
+    #export PATH="/usr/local/opt/coreutils/libexec/gnubin:${PATH}"
+    export PATH="/usr/local/opt/findutils/libexec/gnubin:${PATH}"
+    export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:${PATH}"
+    export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:${PATH}"
+    export PATH="/usr/local/opt/gnu-indent/libexec/gnubin:${PATH}"
+    export PATH="/usr/local/opt/gnu-getopt/bin:${PATH}"
+    export PATH="/usr/local/opt/grep/libexec/gnubin:${PATH}"
 else
     export DEV_TOOLS="/opt/devtools"
 fi
@@ -38,4 +44,5 @@ export PATH="${NODE_HOME}/bin:${PATH}"
 export SONAR_SCANNER="${DEV_TOOLS}/sonar-scanner"
 export PATH="${SONAR_SCANNER}/bin:${PATH}"
 
+alias tmux='tmux attach-session -d'
 alias dc='docker-compose'
