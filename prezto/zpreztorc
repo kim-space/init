@@ -222,6 +222,9 @@ zstyle ':prezto:module:syntax-highlighting' pattern \
 # Set the default session name:
 # zstyle ':prezto:module:tmux:session' name 'YOUR DEFAULT SESSION NAME'
 
+# Set the search prefixed.
+zstyle ':prezto:module:history-substring-search' prefixed 'yes'
+
 #
 # Utility
 #
