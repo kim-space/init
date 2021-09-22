@@ -29,6 +29,9 @@ function install_prezto(){
 
     git clone --recursive ${PREZTO_REPO} "${zdot_home}" 
 
+    info "swicth zsh-history-substring-search to master branch..."
+    (cd ${zdot_home}/modules/history-substring-search/external && git checkout master)
+
     info "link config..."
     for rcfile in $(ls ${ZDOTDIR:-$HOME}/.zprezto/runcoms/* | xargs -n 1 basename | grep -v README); do
         target="${ZDOTDIR:-$HOME}/.${rcfile:t}"

@@ -12,6 +12,7 @@ fi
 
 # Customize to your needs...
 
+export HISTORY_SUBSTRING_SEARCH_PREFIXED=true
 #export ENABLE_VIM_CONFIG='true'
 export EDITOR='vim'
 
