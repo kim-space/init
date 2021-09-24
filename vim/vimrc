@@ -43,22 +43,21 @@ set foldmethod=syntax
 set nofoldenable
 " delete 增强，解决 mac delete 删除失效问题
 set backspace=2
-" 禁止光标闪烁
-set gcr=a:block-blinkon0
-" 禁止显示滚动条
-set guioptions-=l
-set guioptions-=L
-set guioptions-=r
-set guioptions-=R
-" 禁止显示菜单和工具条
-set guioptions-=m
-set guioptions-=T
 " 禁止折行
 set nowrap
 " 设置编码
 set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
 set enc=utf8
 set fencs=utf8,gbk,gb2312,gb18030
+
+" GUI 禁止显示滚动条
+set guioptions-=l
+set guioptions-=L
+set guioptions-=r
+set guioptions-=R
+" GUI 禁止显示菜单和工具条
+set guioptions-=m
+set guioptions-=T
 
 " 定义快捷键的前缀，即<Leader>
 let mapleader=";"
@@ -87,15 +86,28 @@ au InsertLeave *.go,*.sh write
 
 " ################ 自定义插件配置 ################
 
-" 随 vim 自启动
-let g:indent_guides_enable_on_vim_startup=1
-" 从第二层开始可视化显示缩进
-let g:indent_guides_start_level=2
-" 色块宽度
-let g:indent_guides_guide_size=1
-" 快捷键 i 开/关缩进可视化
-nmap <Leader>i :IndentGuidesToggle<CR>
-" 使用 NERDTree 插件查看工程文件。设置快捷键，速记：file list
+" vim-airline/vim-airline
+" maxlinenr 两端加一下空格，否则在 Monaco 字体下会出现遮挡
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {'maxlinenr': " ☰ "}
+endif
+
+" Yggdroot/indentLine
+" 缩进字符
+let g:indentLine_char = '·'
+" 可定义不同缩进的字符
+" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+" SirVer/ultisnips
+" 自动完成代码片段触发
+let g:UltiSnipsExpandTrigger="<tab>"
+" 切换到下一个触发点
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+" 切换到上一个触发点
+let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
+
+" scrooloose/nerdtree
+" 使用 NERDTree 插件查看工程文件
 nmap <Leader>fl :NERDTreeToggle<CR>
 nmap <Leader>fn :NERDTree 
 " 设置 NERDTree 子窗口宽度
@@ -110,12 +122,8 @@ let g:NERDTreeQuitOnOpen=1
 "let NERDTreeMinimalUI=1
 " 删除文件时自动删除文件对应 buffer
 let g:NERDTreeAutoDeleteBuffer=1
-" 自动完成代码片段触发
-let g:UltiSnipsExpandTrigger="<tab>"
-" 切换到下一个触发点
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-" 切换到上一个触发点
-let g:UltiSnipsJumpBackwardTrigger="<S-tab>"
+
+" fholgado/minibufexpl.vim
 " 显示/隐藏 MiniBufExplorer 窗口
 map <Leader>bl :MBEToggle<cr>
 " buffer 切换快捷键
