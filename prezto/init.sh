@@ -7,6 +7,9 @@ PREZTO_REPO='https://github.com/sorin-ionescu/prezto.git'
 ZPREZTORC_URL='https://github.com/mritd/init/raw/master/prezto/zpreztorc'
 ZSHRC_URL='https://github.com/mritd/init/raw/master/prezto/zshrc'
 
+COMPLETION_PRLCTL='https://raw.githubusercontent.com/zchee/zsh-completions/main/src/zsh/_prlctl'
+COMPLETION_PRLSRVCTL='https://raw.githubusercontent.com/zchee/zsh-completions/main/src/zsh/_prlsrvctl'
+
 function pre_check(){
     if ! command -v zsh >/dev/null 2>&1; then
         err "zsh is not installed, please install zsh before init."
@@ -47,6 +50,8 @@ function install_cutom_config(){
     info "install cutom config..."
     curl -sSL ${ZPREZTORC_URL} > "${ZDOTDIR:-$HOME}/.zpreztorc"
     curl -sSL ${ZSHRC_URL} > "${ZDOTDIR:-$HOME}/.zshrc"
+    curl -sSL ${COMPLETION_PRLCTL} > "${ZDOTDIR:-$HOME}/.zprezto/modules/completion/external/src/_prlctl"
+    curl -sSL ${COMPLETION_PRLSRVCTL} > "${ZDOTDIR:-$HOME}/.zprezto/modules/completion/external/src/_prlsrvctl"
 }
 
 function info(){
