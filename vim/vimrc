@@ -150,4 +150,7 @@ endif
 
 colorscheme onedark
 
+" custom file type
+autocmd BufNewFile,BufRead .user.secret set filetype=zsh
+
 endif
