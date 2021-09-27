@@ -23,7 +23,6 @@ export HISTORY_SUBSTRING_SEARCH_PREFIXED=true
 export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 
 # Common Env
-#export ENABLE_VIM_CONFIG='true'
 export EDITOR='vim'
 export VISUAL='vim'
 
@@ -40,6 +39,22 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
     export PATH="/usr/local/opt/gnu-indent/libexec/gnubin:${PATH}"
     export PATH="/usr/local/opt/gnu-getopt/bin:${PATH}"
     export PATH="/usr/local/opt/grep/libexec/gnubin:${PATH}"
+
+    # curl
+    export PATH="/usr/local/opt/curl/bin:${PATH}"
+    
+    # For compilers to find curl
+    export LDFLAGS="-L/usr/local/opt/curl/lib"
+    export CPPFLAGS="-I/usr/local/opt/curl/include"
+
+    # For pkg-config to find curl
+    export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig"
+
+    # iTerm2
+    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+    # User Secret 
+    test -e "${HOME}/.user.secret" && source "${HOME}/.user.secret"
 else
     export DEV_TOOLS="/opt/devtools"
 fi
@@ -62,3 +77,4 @@ export PATH="${SONAR_SCANNER}/bin:${PATH}"
 
 alias tmux='tmux attach-session -d'
 alias dc='docker-compose'
+
