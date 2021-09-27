@@ -83,6 +83,8 @@ nnoremap <Leader><Up><Up> <C-W>k
 nnoremap <Leader><Down><Down> <C-W>j
 " 退出插入模式自动保存
 au InsertLeave *.go,*.sh write
+" 大写 W 调用 sudo 保存
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 " ################ 自定义插件配置 ################
 
