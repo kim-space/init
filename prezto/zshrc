@@ -58,7 +58,6 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
     test -e "${HOME}/.user.secret" && source "${HOME}/.user.secret"
 
     # alias
-    alias docker='podman'
     alias tmux='tmux attach-session -d'
 fi
 
