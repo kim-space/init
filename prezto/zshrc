@@ -27,6 +27,7 @@ export EDITOR='vim'
 export VISUAL='vim'
 
 if [[ "$OSTYPE" =~ ^darwin ]]; then
+    # env
     export DEV_TOOLS="${HOME}/devtools"
 
     # GNU tools
@@ -55,8 +56,19 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
 
     # User Secret 
     test -e "${HOME}/.user.secret" && source "${HOME}/.user.secret"
-else
+
+    # alias
+    alias docker='podman'
+    alias tmux='tmux attach-session -d'
+fi
+
+# for linux
+if [[ "$OSTYPE" =~ ^linux ]]; then
+    # env
     export DEV_TOOLS="/opt/devtools"
+
+    # alias
+    alias dc='docker-compose'
 fi
 
 export GOPATH="${HOME}/gopath"
@@ -74,7 +86,4 @@ export PATH="${NODE_HOME}/bin:${PATH}"
 
 export SONAR_SCANNER="${DEV_TOOLS}/sonar-scanner"
 export PATH="${SONAR_SCANNER}/bin:${PATH}"
-
-alias tmux='tmux attach-session -d'
-alias dc='docker-compose'
 
