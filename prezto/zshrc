@@ -78,6 +78,9 @@ export GOPATH="${HOME}/gopath"
 export GOROOT="${DEV_TOOLS}/go"
 export PATH="${GOROOT}/bin:${GOPATH}/bin:${PATH}"
 
+# Rust
+export PATH="${HOME}/.cargo/bin:${PATH}"
+
 # Java
 export JAVA_HOME="${DEV_TOOLS}/openjdk11"
 export PATH="${JAVA_HOME}/bin:${PATH}"
