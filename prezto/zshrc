@@ -7,7 +7,7 @@
 
 # Source Prezto.
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
 # Customize to your needs...
@@ -26,6 +26,7 @@ export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 export EDITOR='vim'
 export VISUAL='vim'
 
+# For macOS
 if [[ "$OSTYPE" =~ ^darwin ]]; then
     # env
     export DEV_TOOLS="${HOME}/devtools"
@@ -41,7 +42,8 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
     export PATH="/usr/local/opt/gnu-getopt/bin:${PATH}"
     export PATH="/usr/local/opt/grep/libexec/gnubin:${PATH}"
 
-    # curl
+    # cURL
+    # brew install curl
     export PATH="/usr/local/opt/curl/bin:${PATH}"
     
     # For compilers to find curl
@@ -54,14 +56,11 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
     # iTerm2
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-    # User Secret 
-    test -e "${HOME}/.user.secret" && source "${HOME}/.user.secret"
-
     # alias
     alias tmux='tmux attach-session -d'
 fi
 
-# for linux
+# For Linux
 if [[ "$OSTYPE" =~ ^linux ]]; then
     # env
     export DEV_TOOLS="/opt/devtools"
@@ -70,19 +69,28 @@ if [[ "$OSTYPE" =~ ^linux ]]; then
     alias dc='docker-compose'
 fi
 
+# User Secret 
+# Define the secret configuration in this file, prezto automatically loads it
+test -e "${HOME}/.user.secret" && source "${HOME}/.user.secret"
+
+# Golang
 export GOPATH="${HOME}/gopath"
 export GOROOT="${DEV_TOOLS}/go"
 export PATH="${GOROOT}/bin:${GOPATH}/bin:${PATH}"
 
+# Java
 export JAVA_HOME="${DEV_TOOLS}/openjdk11"
 export PATH="${JAVA_HOME}/bin:${PATH}"
 
+# Maven
 export M2_HOME="${DEV_TOOLS}/maven"
 export PATH="${M2_HOME}/bin:${PATH}"
 
+# Nodejs
 export NODE_HOME="${DEV_TOOLS}/nodejs"
 export PATH="${NODE_HOME}/bin:${PATH}"
 
+# Sonar
 export SONAR_SCANNER="${DEV_TOOLS}/sonar-scanner"
 export PATH="${SONAR_SCANNER}/bin:${PATH}"
 
