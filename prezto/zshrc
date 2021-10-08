@@ -94,3 +94,5 @@ export PATH="${NODE_HOME}/bin:${PATH}"
 export SONAR_SCANNER="${DEV_TOOLS}/sonar-scanner"
 export PATH="${SONAR_SCANNER}/bin:${PATH}"
 
+# Common alias
+alias kuebctl='kubectl' # Ok, my stupid finger...
