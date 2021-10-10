@@ -26,6 +26,10 @@ export HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=true
 export EDITOR='vim'
 export VISUAL='vim'
 
+# Use default grep colors
+export GREP_COLOR='01;31'
+export GREP_COLORS='mt=01;31'
+
 # For macOS
 if [[ "$OSTYPE" =~ ^darwin ]]; then
     # env

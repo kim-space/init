@@ -234,5 +234,4 @@ zstyle ':prezto:module:history-substring-search' prefixed 'yes'
 # behavior.
 # zstyle ':prezto:module:utility' safe-ops 'yes'
 
-zstyle ':prezto:module:utility:grep' color 'no'
 zstyle -s ':prezto:module:utility:download' helper 'wget'
