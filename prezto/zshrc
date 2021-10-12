@@ -2,7 +2,7 @@
 # Executes commands at the start of an interactive session.
 #
 # Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   mritd <mritd@linux.com>
 #
 
 # Source Prezto.
@@ -57,9 +57,6 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
     # For pkg-config to find curl
     export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig"
 
-    # iTerm2
-    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
     # alias
     alias tmux='tmux attach-session -d'
 fi
@@ -81,6 +78,10 @@ test -e "${HOME}/.user.secret" && source "${HOME}/.user.secret"
 export GOPATH="${HOME}/gopath"
 export GOROOT="${DEV_TOOLS}/go"
 export PATH="${GOROOT}/bin:${GOPATH}/bin:${PATH}"
+
+# TinyGo
+export TINYGO_HOME="${DEV_TOOLS}/tinygo"
+export PATH="${TINYGO_HOME}/bin:${PATH}"
 
 # Rust
 export PATH="${HOME}/.cargo/bin:${PATH}"
