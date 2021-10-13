@@ -2,7 +2,6 @@
 call plug#begin('~/.vim/plugged')
 " Always loading
 Plug 'vim-airline/vim-airline'
-Plug 'Yggdroot/indentLine'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'

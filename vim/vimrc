@@ -94,12 +94,6 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {'maxlinenr': " ☰ "}
 endif
 
-" Yggdroot/indentLine
-" 缩进字符
-let g:indentLine_char = '·'
-" 可定义不同缩进的字符
-" let g:indentLine_char_list = ['|', '¦', '┆', '┊']
-
 " SirVer/ultisnips
 " 自动完成代码片段触发
 let g:UltiSnipsExpandTrigger="<tab>"
