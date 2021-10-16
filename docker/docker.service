@@ -8,7 +8,3 @@ ExecStart=/usr/bin/dockerd  -H fd:// \
                             --log-driver json-file \
                             --log-opt max-size=30m \
                             --log-opt max-file=3
-
-# support kubernetes CSI(Mount propagation)
-# refs: https://kubernetes.io/docs/concepts/storage/volumes/#csi
-MountFlags=shared
