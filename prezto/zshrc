@@ -46,16 +46,12 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
     export PATH="/usr/local/opt/gnu-getopt/bin:${PATH}"
     export PATH="/usr/local/opt/grep/libexec/gnubin:${PATH}"
 
-    # cURL
+    # curl
     # brew install curl
     export PATH="/usr/local/opt/curl/bin:${PATH}"
     
-    # For compilers to find curl
-    export LDFLAGS="-L/usr/local/opt/curl/lib"
-    export CPPFLAGS="-I/usr/local/opt/curl/include"
-
-    # For pkg-config to find curl
-    export PKG_CONFIG_PATH="/usr/local/opt/curl/lib/pkgconfig"
+    # mysql
+    export PATH="/usr/local/opt/mysql-client/bin:${PATH}"
 
     # alias
     alias tmux='tmux attach-session -d'
@@ -65,9 +61,6 @@ fi
 if [[ "$OSTYPE" =~ ^linux ]]; then
     # env
     export DEV_TOOLS="/opt/devtools"
-
-    # alias
-    alias dc='docker-compose'
 fi
 
 # User Secret 
@@ -104,3 +97,4 @@ export PATH="${SONAR_SCANNER}/bin:${PATH}"
 
 # Common alias
 alias kuebctl='kubectl' # Ok, my stupid finger...
+alias dc='docker compose'
