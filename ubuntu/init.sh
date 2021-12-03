@@ -6,7 +6,7 @@ OS_RELEASE="$(lsb_release -cs)"
 OS_TIMEZONE=${OS_TIMEZONE-"Asia/Shanghai"}
 GITHUB_HOST=${GITHUB_HOST-"github.com"}
 GITHUB_RAW_HOST=${GITHUB_RAW_HOST-"raw.githubusercontent.com"}
-USE_APT_MIRROR=${USE_APT_MIRROR-"true"}
+USE_APT_MIRROR=${USE_APT_MIRROR-"false"}
 SOURCES_LIST_URL="https://${GITHUB_RAW_HOST}/mritd/init/master/ubuntu/sources.list"
 
 backup_timestamp=$(date "+%Y%m%d%H%M%S")
