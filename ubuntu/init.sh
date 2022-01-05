@@ -13,6 +13,7 @@ backup_timestamp=$(date "+%Y%m%d%H%M%S")
 
 function setlocale(){
     info "set system locale..."
+    apt install locales -y
     warn "backup [/etc/locale.gen] to [/etc/locale.gen-${backup_timestamp}]"
     mv /etc/locale.gen /etc/locale.gen-${backup_timestamp}
     echo 'en_US.UTF-8 UTF-8' > /etc/locale.gen
