@@ -32,6 +32,9 @@ export GREP_COLORS='mt=01;31'
 
 # For macOS
 if [[ "$OSTYPE" =~ ^darwin ]]; then
+    # brew
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+
     # env
     export DEV_TOOLS="${HOME}/devtools"
 
@@ -80,7 +83,7 @@ export PATH="${TINYGO_HOME}/bin:${PATH}"
 export PATH="${HOME}/.cargo/bin:${PATH}"
 
 # Java
-export JAVA_HOME="${DEV_TOOLS}/openjdk11"
+export JAVA_HOME="${DEV_TOOLS}/openjdk17"
 export PATH="${JAVA_HOME}/bin:${PATH}"
 
 # Maven
