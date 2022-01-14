@@ -98,6 +98,9 @@ export PATH="${NODE_HOME}/bin:${PATH}"
 export SONAR_SCANNER="${DEV_TOOLS}/sonar-scanner"
 export PATH="${SONAR_SCANNER}/bin:${PATH}"
 
+# Docker build default platform
+export DOCKER_DEFAULT_PLATFORM="linux/amd64"
+
 # Common alias
 alias kuebctl='kubectl' # Ok, my stupid finger...
 alias dc='docker compose'
