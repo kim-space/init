@@ -2,7 +2,7 @@
 
 set -ex
 
-DOWNLOAD_URL=`curl -s https://api.github.com/repos/containerd/nerdctl/releases/latest | jq -r ".assets[] | select((.name | contains(\"full\")) and (.name | contains(\"$(uname -m)\"))) | .browser_download_url"`
+DOWNLOAD_URL=`curl -s https://api.github.com/repos/containerd/nerdctl/releases/latest | jq -r ".assets[] | select((.name | contains(\"full\")) and (.name | contains(\"$(dpkg --print-architecture)\"))) | .browser_download_url"`
 
 echo ${DOWNLOAD_URL}
 
