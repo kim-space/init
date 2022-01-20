@@ -1,0 +1,10 @@
+[Service]
+ExecStart=
+ExecStart=/usr/bin/dockerd  -H fd:// \
+                            --init \
+                            --live-restore \
+                            --exec-opt native.cgroupdriver=systemd \
+                            --data-root=/data/docker \
+                            --log-driver json-file \
+                            --log-opt max-size=30m \
+                            --log-opt max-file=3
