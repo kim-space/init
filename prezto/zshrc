@@ -108,6 +108,13 @@ export PATH="${SONAR_SCANNER}/bin:${PATH}"
 # Docker build default platform
 export DOCKER_DEFAULT_PLATFORM="linux/amd64"
 
-# Common alias
-alias kuebctl='kubectl' # Ok, my stupid finger...
+# Common Aliases
+#
+# Overwrite Aliases
+# see also: https://github.com/sorin-ionescu/prezto/blob/master/modules/utility/init.zsh
+alias l='ls -alh'
+alias lm='ls -alh | "$PAGER"'
+
+# Custom Aliases
+alias kuebctl='kubectl'
 alias dc='docker compose'
