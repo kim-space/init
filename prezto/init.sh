@@ -4,7 +4,6 @@ set -e
 
 BACKUP_TIMESTAMP=$(date "+%Y%m%d%H%M%S")
 PREZTO_REPO='https://github.com/sorin-ionescu/prezto.git'
-ZPROFILE_URL='https://github.com/mritd/init/raw/master/prezto/zprofile'
 ZPREZTORC_URL='https://github.com/mritd/init/raw/master/prezto/zpreztorc'
 ZSHRC_URL='https://github.com/mritd/init/raw/master/prezto/zshrc'
 
@@ -50,7 +49,6 @@ function install_prezto(){
 
 function install_cutom_config(){
     info "install cutom config..."
-    curl -sSL ${ZPROFILE_URL} > "${ZDOTDIR:-$HOME}/.zprofile"
     curl -sSL ${ZPREZTORC_URL} > "${ZDOTDIR:-$HOME}/.zpreztorc"
     curl -sSL ${ZSHRC_URL} > "${ZDOTDIR:-$HOME}/.zshrc"
     curl -sSL ${COMPLETION_PRLCTL} > "${ZDOTDIR:-$HOME}/.zprezto/modules/completion/external/src/_prlctl"
