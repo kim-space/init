@@ -72,9 +72,6 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
     
     # mysql
     export PATH="${HOMEBREW_PREFIX}/opt/mysql-client/bin:${PATH}"
-
-    # alias
-    #alias tmux='tmux attach-session -d'
 fi
 
 # For Linux
