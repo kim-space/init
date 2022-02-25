@@ -49,12 +49,12 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
     # brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep
     #
     #export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:${PATH}"
-    export PATH="${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin:${PATH}"
-    export PATH="${HOMEBREW_PREFIX}/opt/gnu-tar/libexec/gnubin:${PATH}"
-    export PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:${PATH}"
-    export PATH="${HOMEBREW_PREFIX}/opt/gnu-indent/libexec/gnubin:${PATH}"
-    export PATH="${HOMEBREW_PREFIX}/opt/gnu-getopt/bin:${PATH}"
-    export PATH="${HOMEBREW_PREFIX}/opt/grep/libexec/gnubin:${PATH}"
+    #export PATH="${HOMEBREW_PREFIX}/opt/findutils/libexec/gnubin:${PATH}"
+    #export PATH="${HOMEBREW_PREFIX}/opt/gnu-tar/libexec/gnubin:${PATH}"
+    #export PATH="${HOMEBREW_PREFIX}/opt/gnu-sed/libexec/gnubin:${PATH}"
+    #export PATH="${HOMEBREW_PREFIX}/opt/gnu-indent/libexec/gnubin:${PATH}"
+    #export PATH="${HOMEBREW_PREFIX}/opt/gnu-getopt/bin:${PATH}"
+    #export PATH="${HOMEBREW_PREFIX}/opt/grep/libexec/gnubin:${PATH}"
 
     # OpenSSL
     # brew install openssl
@@ -74,7 +74,7 @@ if [[ "$OSTYPE" =~ ^darwin ]]; then
     export PATH="${HOMEBREW_PREFIX}/opt/mysql-client/bin:${PATH}"
 
     # alias
-    alias tmux='tmux attach-session -d'
+    #alias tmux='tmux attach-session -d'
 fi
 
 # For Linux
@@ -100,7 +100,7 @@ export PATH="${TINYGO_HOME}/bin:${PATH}"
 export PATH="${HOME}/.cargo/bin:${PATH}"
 
 # Java
-export JAVA_HOME="${DEV_TOOLS}/openjdk11"
+export JAVA_HOME="${DEV_TOOLS}/openjdk17"
 export PATH="${JAVA_HOME}/bin:${PATH}"
 
 # Maven
@@ -124,6 +124,12 @@ export DOCKER_DEFAULT_PLATFORM="linux/amd64"
 # see also: https://github.com/sorin-ionescu/prezto/blob/master/modules/utility/init.zsh
 alias l='ls -alh'
 alias lm='ls -alh | "$PAGER"'
+
+# alias bat to cat
+# https://github.com/sharkdp/bat
+if command -v bat &> /dev/null; then
+    alias cat='bat --theme TwoDark'
+fi
 
 # Custom Aliases
 alias kuebctl='kubectl'
