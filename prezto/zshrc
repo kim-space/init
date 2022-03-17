@@ -125,7 +125,7 @@ alias lm='ls -alh | "$PAGER"'
 # alias bat to cat
 # https://github.com/sharkdp/bat
 if command -v bat &> /dev/null; then
-    alias cat='bat --theme TwoDark'
+    alias cat='bat --theme OneHalfDark --style=plain'
 fi
 
 # Custom Aliases
