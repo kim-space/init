@@ -2,7 +2,6 @@
 
 set -e
 
-
 function init_ssh(){
     info "Enable root login..."
     cat > /etc/ssh/sshd_config.d/10-sshd-init.conf <<EOF
@@ -22,3 +21,5 @@ function warn(){
 function err(){
     echo -e "\033[31mERROR: $@\033[0m"
 }
+
+init_ssh
